@@ -11,13 +11,12 @@ function App() {
     
     if(input.trim()=="")return;
     settodos([...todos,input])
-    setinput("")
-    
+   setinput("")
   }
   return(
     <div style={{textAlign:"center",marginTop:"50px"}}>
       <h1>TODO LIST</h1>
-      <input style={{outline:"none",padding:"10px",borderRadius:"5px"}} type="text" placeholder='ENTER A TASK' onChange={(e)=>setinput(e.target.value)}/>
+      <input id='in' value={input}  style={{outline:"none",padding:"10px",borderRadius:"5px",fontSize:"17px"}} type="text" placeholder='ENTER A TASK' onChange={(e)=>setinput(e.target.value)}/>
       <button onClick={addtodo} style={{marginLeft:"10px"}}>Add</button>
       <div style={{marginTop:"30px" }}>
         {todos.map((val,index)=>{return <Todoitem key={index} task={val} />
